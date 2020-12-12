@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1111,
+    "type": "댕",
+    "image_url": "https://user-images.githubusercontent.com/45069571/101986745-3337e800-3cd3-11eb-9085-3dceb80cb7af.png"
+  },
+  {
+    "id": 2222,
+    "type": "냥",
+    "image_url": "https://user-images.githubusercontent.com/45069571/101986763-48147b80-3cd3-11eb-9d40-83570b70dac3.png"
+  },
+  {
+    "id": 3333,
+    "type": "댕",
+    "image_url": "https://user-images.githubusercontent.com/45069571/101986750-37fc9c00-3cd3-11eb-8368-d47c32ae0a3e.png"
+  },
+  {
+    "id": 4444,
+    "type": "냥",
+    "image_url": "https://user-images.githubusercontent.com/45069571/101986765-4e0a5c80-3cd3-11eb-9853-08962d87f00b.png"
+  },
+  {
+    "id": 5555,
+    "type": "댕",
+    "image_url": "https://user-images.githubusercontent.com/45069571/101986752-392dc900-3cd3-11eb-8ba0-8b551050ac24.png"
+  },
+  {
+    "id": 6666,
+    "type": "댕",
+    "image_url": "https://user-images.githubusercontent.com/45069571/101986753-3a5ef600-3cd3-11eb-83c7-2250a3d0f44d.png"
+  },
+  {
+    "id": 7777,
+    "type": "냥",
+    "image_url": "https://user-images.githubusercontent.com/45069571/101986755-3af78c80-3cd3-11eb-8099-c444b284e645.png"
+  },
+  {
+    "id": 8888,
+    "type": "냥",
+    "image_url": "https://user-images.githubusercontent.com/45069571/101986759-434fc780-3cd3-11eb-8fb2-03fa52a331ef.png"
+  }
+]
