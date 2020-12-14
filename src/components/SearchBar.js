@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {View} from 'react-native';
 import {SearchBar as Search, Button} from 'react-native-elements';
@@ -11,10 +11,13 @@ const indexContainerStyle = {
 };
 
 const SearchBar = () => {
+  const [searchValue, setSearchValue] = useState('');
   return (
     <>
       <SearchBarView>
         <Search
+          value={searchValue}
+          onChangeText={(value) => setSearchValue(value)}
           placeholder="검색어를 입력하세요."
           platform="android"
           containerStyle={{
