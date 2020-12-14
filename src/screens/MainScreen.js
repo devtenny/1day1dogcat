@@ -1,12 +1,19 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Button, View} from 'react-native';
 
 import MainList from '../components/MainList';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
-import Footer from '../components/Footer';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+// import Footer from '../components/Footer';
 
-const MainScreen = () => {
+const MainScreen = ({navigation}) => {
+  const handleMainScreen = (item) => {
+    navigation.push('MainDetail', {
+      item: item,
+    });
+  };
+
   return (
     <View
       style={{
@@ -19,7 +26,9 @@ const MainScreen = () => {
       }}>
       <Header />
       <SearchBar />
-      <MainList />
+      {/* <TouchableOpacity onPress={() => navigation.push('MainDetail')}> */}
+      <MainList handleMainScreen={handleMainScreen} />
+      {/* </TouchableOpacity> */}
       {/* <Footer /> */}
     </View>
   );
