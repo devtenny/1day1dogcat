@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {View, ScrollView, Text, Image} from 'react-native';
+import {View, TouchableOpacity, Text, Image} from 'react-native';
 import {Icon} from 'react-native-elements';
 
 const imageSize = {
@@ -9,34 +9,43 @@ const imageSize = {
   marginTop: 10,
 };
 
-const MainList = (data) => {
-  console.log(data);
+const MainCard = ({data, handleMainScreen}) => {
+  const [isSelected, setIsSelected] = useState(false);
+  const [item, setItem] = useState(data);
   return (
     <View
       style={{
         flexDirection: 'column',
       }}>
-      <Image
-        style={imageSize}
-        source={{
-          uri: data.data.image_url,
-        }}
-      />
+      <TouchableOpacity onPress={() => handleMainScreen(item)}>
+        <Image
+          style={imageSize}
+          source={{
+            uri: item.image_url,
+          }}
+        />
+      </TouchableOpacity>
       <View
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
         }}>
         <CardInfoText>
-          #{data.data.type} #{data.data.id}
+          #{item.type} #{item.id}
         </CardInfoText>
-        <Icon name="heart" type="font-awesome-5" color="#f50" size={18} />
+        <TouchableOpacity onPress={() => setIsSelected(!isSelected)}>
+          {isSelected ? (
+            <Icon name="heart" type="font-awesome" color="#f50" size={20.5} />
+          ) : (
+            <Icon name="heart" type="font-awesome-5" color="#f50" size={20} />
+          )}
+        </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default MainList;
+export default MainCard;
 
 const CardInfoText = styled(Text)`
   font-weight: bold;
