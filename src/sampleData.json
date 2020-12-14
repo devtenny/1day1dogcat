@@ -2,7 +2,11 @@
   {
     "id": 1111,
     "type": "댕",
-    "image_url": "https://user-images.githubusercontent.com/45069571/101986745-3337e800-3cd3-11eb-9085-3dceb80cb7af.png"
+    "image_url": "https://user-images.githubusercontent.com/45069571/101986745-3337e800-3cd3-11eb-9085-3dceb80cb7af.png",
+    "name": "댕댕이",
+    "kind": "푸들",
+    "age": 2,
+    "text": "너 눈사람이냐...💓"
   },
   {
     "id": 2222,
