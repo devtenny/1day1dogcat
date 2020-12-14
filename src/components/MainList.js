@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
-import {View, ScrollView, Text, Image} from 'react-native';
-import {SearchBar, Button} from 'react-native-elements';
+import {View, ScrollView, TouchableOpacity} from 'react-native';
 
 import sampleData from '../sampleData.json';
 import MainCard from './MainCard';
 
-const MainList = () => {
+const MainList = ({handleMainScreen}) => {
   const [data] = useState(sampleData);
   return (
     <ScrollView style={{width: '100%', marginTop: 10}}>
@@ -15,10 +13,16 @@ const MainList = () => {
           flexDirection: 'row',
           justifyContent: 'space-around',
           flexWrap: 'wrap',
+          marginBottom: 30,
         }}>
         {data.map((item) => {
-          // console.log(item.image_url);
-          return <MainCard key={item.id} data={item} />;
+          return (
+            <MainCard
+              key={item.id}
+              data={item}
+              handleMainScreen={handleMainScreen}
+            />
+          );
         })}
       </View>
     </ScrollView>
