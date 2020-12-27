@@ -1,20 +1,30 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {View, Text, TouchableOpacity} from 'react-native';
+import {Icon} from 'react-native-elements';
 
-import Main from '../screens/MainScreen';
-
-const Tab = createBottomTabNavigator();
-
-const Footer = () => {
+const Footer = ({nav}) => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="내 주변" component={Main} />
-        <Tab.Screen name="홈" component={Main} />
-        <Tab.Screen name="프로필" component={Main} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '100%',
+        paddingTop: 5,
+        borderTopWidth: 0.2,
+      }}>
+      <TouchableOpacity onPress={() => nav.push('GpsMap')}>
+        <Icon name="map-marker" type="font-awesome" size={20.5} />
+        <Text>내 주변</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => nav.push('Main')}>
+        <Icon name="home" type="font-awesome" size={20.5} />
+        <Text style={{marginLeft: 3}}>홈</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => nav.push('Profile')}>
+        <Icon name="user" type="font-awesome" size={20.5} />
+        <Text>프로필</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
