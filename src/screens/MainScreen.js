@@ -1,13 +1,16 @@
-import React from 'react';
-import {Button, View} from 'react-native';
+import React, {useState} from 'react';
+import {View} from 'react-native';
 
 import MainList from '../components/MainList';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
+
+import sampleData from '../sampleData.json';
 
 const MainScreen = ({navigation}) => {
+  const [data, setData] = useState(sampleData);
+
   const handleMainScreen = (item) => {
     navigation.push('MainDetail', {
       item: item,
@@ -24,12 +27,18 @@ const MainScreen = ({navigation}) => {
         padding: 15,
         paddingBottom: -15,
       }}>
-      <Header />
-      <SearchBar />
-      {/* <TouchableOpacity onPress={() => navigation.push('MainDetail')}> */}
-      <MainList handleMainScreen={handleMainScreen} />
-      {/* </TouchableOpacity> */}
-      {/* <Footer /> */}
+      <Header text={'1일 1댕냥'} />
+      <View style={{height: '84%'}}>
+        <View
+          style={{
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+          }}>
+          <SearchBar data={data} setData={setData} />
+        </View>
+        <MainList handleMainScreen={handleMainScreen} data={data} />
+      </View>
+      <Footer nav={navigation} />
     </View>
   );
 };
