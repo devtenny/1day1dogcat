@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
-import {View, ScrollView, TouchableOpacity} from 'react-native';
+import React from 'react';
+import {View, ScrollView} from 'react-native';
 
-import sampleData from '../sampleData.json';
 import MainCard from './MainCard';
 
-const MainList = ({handleMainScreen}) => {
-  const [data] = useState(sampleData);
+const MainList = ({handleMainScreen, data}) => {
   return (
     <ScrollView style={{width: '100%', marginTop: 10}}>
       <View
