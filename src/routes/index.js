@@ -6,6 +6,10 @@ import Login from '../screens/LoginScreen';
 import SignUp from '../screens/SignUpScreen';
 import Main from '../screens/MainScreen';
 import MainDetail from '../screens/MainDetailScreen';
+import GpsMap from '../screens/GpsMapScreen';
+import Profile from '../screens/ProfileScreen';
+import Alert from '../screens/AlertScreen';
+import AddPet from '../screens/AddPetScreen';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +34,26 @@ const RootStack = () => (
       <Stack.Screen
         name="MainDetail"
         component={MainDetail}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="GpsMap"
+        component={GpsMap}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Alert"
+        component={Alert}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AddPet"
+        component={AddPet}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
