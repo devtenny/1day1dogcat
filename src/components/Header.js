@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {View, Text, TouchableOpacity} from 'react-native';
 import QuizModal from './QuizModal';
 
-const Header = () => {
+const Header = ({text}) => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <>
@@ -20,7 +20,7 @@ const Header = () => {
           setModalVisible={setModalVisible}
         />
       </View>
-      <MainText>1일 1댕냥</MainText>
+      <MainText>{text}</MainText>
     </>
   );
 };
