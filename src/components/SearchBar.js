@@ -1,17 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {View} from 'react-native';
 import {SearchBar as Search, Button} from 'react-native-elements';
 
-const indexContainerStyle = {
-  borderRadius: 30,
-  borderColor: 'lightgrey',
-  borderWidth: 1,
-  marginLeft: 5,
-};
+import sampleData from '../sampleData.json';
 
-const SearchBar = () => {
+const SearchBar = ({data, setData}) => {
+  const [isChecked, setIsChecked] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+
+  const indexContainerStyle = {
+    borderRadius: 30,
+    borderColor: 'lightgrey',
+    borderWidth: 1,
+    marginLeft: 5,
+  };
+
+  useEffect(() => {
+    setData(sampleData);
+  }, []);
+
   return (
     <>
       <SearchBarView>
@@ -40,18 +48,42 @@ const SearchBar = () => {
           titleStyle={{color: 'grey', fontSize: 15}}
           containerStyle={indexContainerStyle}
           type="clear"
+          onPress={() => {
+            setData(sampleData);
+          }}
+          title="전체"
+        />
+        <IndexButton
+          titleStyle={{color: 'grey', fontSize: 15}}
+          containerStyle={indexContainerStyle}
+          type="clear"
+          onPress={() => {
+            setIsChecked(!isChecked);
+            const newData = data.filter((item) => item.type === '댕');
+            setData(newData);
+          }}
           title="강아지"
         />
         <IndexButton
           titleStyle={{color: 'grey', fontSize: 15}}
           containerStyle={indexContainerStyle}
           type="clear"
+          onPress={() => {
+            setIsChecked(!isChecked);
+            const newData = data.filter((item) => item.type === '냥');
+            setData(newData);
+          }}
           title="고양이"
         />
         <IndexButton
           titleStyle={{color: 'grey', fontSize: 15}}
           containerStyle={indexContainerStyle}
           type="clear"
+          onPress={() => {
+            setIsChecked(!isChecked);
+            const newData = data.filter((item) => item.adopt);
+            setData(newData);
+          }}
           title="입양을 기다려요"
         />
       </View>
